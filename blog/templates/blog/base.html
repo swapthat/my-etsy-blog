@@ -1,20 +1,78 @@
-{% load static %}
+{% load staticfiles %}
 <html>
     <head>
-        <title>ETSY Blog</title>
+        <title>ETSY BLOG </title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'common-css/ionicons.css' %}">
+		<link href="{% static 'common-css/layerslider.css' %}" rel="stylesheet">
+
     </head>
     <body>
-        <div class="page-header">
+    <header>
+    <div class="top-menu">
+
+			<ul class="left-area welcome-area">
+				<li class="hello-blog">Hello nice people, welcome to my blog</li>
+				<li><a href="mailto:contact@juliblog.com">contact@juliblog.com</a></li>
+			</ul><!-- left-area -->
+        <div class="right-area">
+
+				<div class="src-area">
+					<form action="post">
+						<input class="src-input" type="text" placeholder="Search">
+						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+					</form>
+				</div><!-- src-area -->
+
+				<ul class="social-icons">
+					<li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
+					<li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
+					<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+					<li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
+					<li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+				</ul><!-- right-area -->
+
+			</div><!-- right-area -->
+		</div><!-- top-menu -->
+        <div class="middle-menu center-text"><a href="#" class="logo"><img src="{% static 'images/logo.png' %}" alt="Logo Image"></a></div>
+
+		<div class="bottom-area">
+
+			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
+
+			<ul class="main-menu visible-on-click" id="main-menu">
+				<li class="drop-down"><a href="#!">HOME<i class="ion-ios-arrow-down"></i></a>
+
+					<ul class="drop-down-menu">
+						<li><a href="#">FEATURED</a></li>
+						<li><a href="#">ABOUT</a></li>
+						<li class="drop-down"><a href="#!">CATEGORIES<i class="ion-ios-arrow-right"></i></a>
+							<ul class="drop-down-menu drop-down-inner">
+								<li><a href="#">FEATURED</a></li>
+								<li><a href="#">ABOUT</a></li>
+								<li><a href="#">CATEGORIES</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</li>
+				<li><a href="#">FEATURED</a></li>
+				<li><a href="#">ABOUT</a></li>
+				<li><a href="#">CATEGORIES</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul><!-- main-menu -->
+
+		</div><!-- conatiner -->
+    <div class="page-header">
             {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
             <h1><a href="/">SwapThatWorldStudio</a></h1>
-        </div>
-
+    </div>
+    </header>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
